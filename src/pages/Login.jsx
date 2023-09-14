@@ -66,7 +66,7 @@ function Login() {
             alignItems: "center"
         }}
         >
-            <Typography component="h1" variant='h4'>Entrar</Typography>
+            <Typography component="h1" variant='h4' style={{color:"rgba(0,0,255,0.6)"}}>Entrar</Typography>
             { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }}>Revise seus dados e tente novamente</Alert> ) }
             <Box component="form" onSubmit={Autenticar}>
                 <TextField 
@@ -90,6 +90,7 @@ function Login() {
                 <FormControlLabel
                     control={ <Checkbox value={lembrar} name="lembrar" onChange={(e) => setLembrar( !lembrar ) } />}
                     label="Lembrar-me"
+                    style={{color:"rgba(0,0,255,0.6)"}}
                 />
                 <Button type="submit" variant="contained" fullWidth sx={ { mt: 2, mb: 2 }} size="large">Login</Button>
                 <Grid container>
