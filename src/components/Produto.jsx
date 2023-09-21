@@ -2,9 +2,9 @@ import { Card, CardActions, CardContent, CardMedia, Typography, Button, Link } f
 
 function Produto(props) {
   return (
-    <Card sx={{ maxWidth: 345 }} key={props.key}>
-        <CardMedia 
-            sx={{ height: 140 }}
+    <Card sx={{ maxWidth: 250, maxHeight: 500, marginBottom:"20px", boxShadow:"1px 3px 10px blue" }} key={props.key}>
+        <CardMedia
+            sx={{ height: 180}}
             image={props.imagem}
             title={props.titulo}
         />
@@ -18,10 +18,10 @@ function Produto(props) {
         </CardContent>
         <CardActions>
             <Button size="large">
-                <Link href={ "editar/produto/" + props.id }>Editar</Link>
+                <Link style={{position: "absolute", marginTop: 10, textDecoration: "none"}} href={ "editar/produto/" + props.id }>Editar</Link>
             </Button>
             <Button size="large">
-                <Link href="#" onClick={props.excluir}>Excluir</Link>
+                <Link style={{position: "absolute", marginTop: 10, marginLeft: "180px", textDecoration: "none"}} href="#" onClick={props.excluir}>Excluir</Link>
             </Button>
         </CardActions>
     </Card>
