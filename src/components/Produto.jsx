@@ -1,30 +1,32 @@
-import { Card, CardActions, CardContent, CardMedia, Typography, Button, Link } from "@mui/material"
+import { Card, CardActions, CardContent, CardMedia, Typography, Button, Link, Grid } from "@mui/material"
 
 function Produto(props) {
   return (
-    <Card sx={{ maxWidth: 250, maxHeight: 500, marginBottom:"20px", boxShadow:"1px 3px 10px blue" }} key={props.key}>
-        <CardMedia
-            sx={{ height: 180}}
-            image={props.imagem}
-            title={props.titulo}
-        />
-        <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-                {props.titulo}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-                {props.descricao}
-            </Typography>
-        </CardContent>
-        <CardActions>
-            <Button size="large">
-                <Link style={{position: "absolute", marginTop: 10, textDecoration: "none"}} href={ "editar/produto/" + props.id }>Editar</Link>
-            </Button>
-            <Button size="large">
-                <Link style={{position: "absolute", marginTop: 10, marginLeft: "180px", textDecoration: "none"}} href="#" onClick={props.excluir}>Excluir</Link>
-            </Button>
-        </CardActions>
-    </Card>
+    <Grid item lg={3} md={6} xs={12} >
+        <Card sx={{  boxShadow:"1px 3px 10px blue", minHeight:200 }} key={props.key}>
+            <CardMedia
+                sx={{ height: 220}}
+                image={props.imagem}
+                title={props.titulo}
+            />
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {props.titulo}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    {props.descricao}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="large">
+                    <Link style={{textDecoration: "none"}} href={ "editar/produto/" + props.id }>Editar</Link>
+                </Button>
+                <Button size="large">
+                    <Link style={{ textDecoration: "none"}} href="#" onClick={props.excluir}>Excluir</Link>
+                </Button>
+            </CardActions>
+        </Card>
+    </Grid>
   )
 }
 
